@@ -12,8 +12,9 @@ class StudentsController < ApplicationController
   end
 
   def create
-    @post = Post.new
-    redirect_to new_student_path
+    @student = Post.create(first_name: params[:first_name], last_name: params[:last_name])
+    redirect_to student_path(@student)
+  
   end
 
 end
